@@ -6,7 +6,7 @@ download.file(data_url, "./sbuxPrices.csv")
 
 
 # Load the data frame using read.csv
-sbux_df = read.csv(sbuxPrices.csv ,header=T,stringsAsFactors=F)
+sbux_df = read.csv("./sbuxPrices.csv" ,header=T,stringsAsFactors=F)
 
 
 # The sbux_df data frame is already loaded in your work space
@@ -30,12 +30,21 @@ some_prices = sbux_df[index_1:index_2,2]
 
 Subset directly on dates
 
-The way you selected the data from a specific trading day in the previous exercise was not very convenient, right?
-When you create a data frame that has the dates of the stock price as row names, you can select the price on a specific day much more easily. The sample code on the right creates a new data frame sbux_prices_df that has the trading days as row names. You can select the price on 3/1/1994 now simply with sbux_prices_df["3/1/1994", 1].
+The way you selected the data from a specific trading day in the previous exercise
+was not very convenient, right?
+When you create a data frame that has the dates of the stock price as row names, 
+you can select the price on a specific day much more easily. The sample code on
+the right creates a new data frame sbux_prices_df that has the trading days as row 
+names. You can select the price on 3/1/1994 now simply 
+with sbux_prices_df["3/1/1994", 1].
+
+
 Instructions
 
 Assign to price_1 the Starbucks stock price on 3/1/1994.
+price_1<-sbux_df["3/1/1994", 1]
 Assign to price_2 the Starbucks stock price on 3/1/1995.
+price_2<-sbux_prices_df["3/1/1995", 1]
 
 
 
@@ -47,7 +56,7 @@ head(sbux_prices_df)
 # With Dates as rownames, you can subset directly on the dates.
 # Find indices associated with the dates 3/1/1994 and 3/1/1995.
 price_1 = sbux_prices_df["3/1/1994", 1]
-price_2 = sbux_prices_df["3/1/1994", 1]
+price_2 = sbux_prices_df["3/1/1995", 1]
 
 
 ##################################
